@@ -21,6 +21,10 @@ TEST(SIMILARITYCHECK, compareLengthLessThanFourStrings) {
 	EXPECT_EQ(45, stringComparator.compareString("FGHI", "ABCDE"));
 }
 
+TEST(SIMILARITYCHECK, compareLengthLessThanOnetring) {
+	StringComparator stringComparator;
+	EXPECT_EQ(0, stringComparator.compareString("F", "ABCDE"));
+}
 
 int main() {
 	::testing::InitGoogleMock();
