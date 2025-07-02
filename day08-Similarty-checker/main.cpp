@@ -32,6 +32,10 @@ TEST_F(stringComparatorFixture, compareAlphabetOneString) {
 	EXPECT_EQ(77, stringComparator.compareString("ABCD", "ABCDE"));
 }
 
+TEST_F(stringComparatorFixture, compareAlphabetLengthCheck) {
+	EXPECT_EQ(86, static_cast<int>(stringComparator.compareString("ABCDF", "ABCDE")));
+}
+
 int main() {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();
