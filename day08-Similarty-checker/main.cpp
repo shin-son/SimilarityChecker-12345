@@ -11,6 +11,12 @@ TEST(SIMILARITYCHECK, compareLength) {
 	EXPECT_EQ(60, stringComparator.compareString("FGHIJ", "ABCDE"));
 }
 
+TEST(SIMILARITYCHECK, compareLengthMoreThanSixStrings) {
+	StringComparator stringComparator;
+	EXPECT_EQ(48, stringComparator.compareString("FGHIJK", "ABCDE"));
+}
+
+
 int main() {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();

@@ -5,10 +5,9 @@ using std::string;
 
 class StringComparator {
 public:
-	int compareString(const string& string1, const string& string2) {
+	double compareString(const string& string1, const string& string2) {
 		if (string1 == string2) return 100;
-		int gap;
-		double percentage, partialPoint;
+		double gap, percentage, partialPoint;
 
 		if (string1.size() > string2.size()) {
 			gap = string1.size() - string2.size();
