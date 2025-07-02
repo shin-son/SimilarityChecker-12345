@@ -6,8 +6,7 @@ using std::string;
 class StringComparator {
 public:
 	double compareString(const string& string1, const string& string2) {		
-		if (string1 == string2) return 100;
-		else return compareLength(string1, string2) + compareAlphabet(string1, string2);
+		return compareLength(string1, string2) + compareAlphabet(string1, string2);
 	}
 
 	double compareAlphabet(const string& string1, const string& string2) {
