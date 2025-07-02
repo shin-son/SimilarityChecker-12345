@@ -9,14 +9,18 @@ public:
 		return compareLength(string1, string2) + compareAlphabet(string1, string2);
 	}
 
+	bool isAlphabet(const char eachAlphabet) {
+		return (eachAlphabet >= 'A' && eachAlphabet <= 'Z');
+	}
+
 	double compareAlphabet(const string& string1, const string& string2) {
 		bool used1[26] = { false }, used2[26] = { false };
 		for (char eachAlphabet : string1) {
-			if (eachAlphabet >= 'A' && eachAlphabet <= 'Z') used1[eachAlphabet - 'A'] = true;
+			if (isAlphabet(eachAlphabet)) used1[eachAlphabet - 'A'] = true;
 		}
 
 		for (char eachAlphabet : string2) {
-			if (eachAlphabet >= 'A' && eachAlphabet <= 'Z') used2[eachAlphabet - 'A'] = true;
+			if (isAlphabet(eachAlphabet)) used2[eachAlphabet - 'A'] = true;
 		}
 
 		double commonCnt = 0, totalCnt = 0;
