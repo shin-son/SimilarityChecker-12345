@@ -7,7 +7,10 @@ class StringComparator {
 public:
 	double compareString(const string& string1, const string& string2) {		
 		if (string1 == string2) return 100;
+		return compareLength(string1, string2);
+	}
 
+	double compareLength(const string& string1, const string& string2) {
 		double len1 = static_cast<double>(string1.size());
 		double len2 = static_cast<double>(string2.size());
 
