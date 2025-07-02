@@ -9,10 +9,6 @@ public:
 		return compareLength(string1, string2) + compareAlphabet(string1, string2);
 	}
 
-	bool isAlphabet(const char eachAlphabet) {
-		return (eachAlphabet >= 'A' && eachAlphabet <= 'Z');
-	}
-
 	double compareAlphabet(const string& string1, const string& string2) {
 		bool used1[26] = { false }, used2[26] = { false };
 		for (char eachAlphabet : string1) {
@@ -47,5 +43,10 @@ public:
 		double lengthPoint = std::max(0.0, (1 - percentage) * 60.0);
 
 		return lengthPoint;
+	}
+
+private:
+	bool isAlphabet(const char eachAlphabet) {
+		return (eachAlphabet >= 'A' && eachAlphabet <= 'Z');
 	}
 };
