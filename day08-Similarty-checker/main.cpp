@@ -1,8 +1,29 @@
 #include "gmock/gmock.h"
 #include "similarity_checker.h"
 
-TEST(TS, TC1) {
-	EXPECT_EQ(1, 1);
+TEST(SIMILARITYCHECK, compareEqualString) {
+	StringComparator stringComparator;
+	EXPECT_EQ(100, stringComparator.compareString("ABCDE", "ABCDE"));
+}
+
+TEST(SIMILARITYCHECK, compareLength) {
+	StringComparator stringComparator;
+	EXPECT_EQ(60, stringComparator.compareString("FGHIJ", "ABCDE"));
+}
+
+TEST(SIMILARITYCHECK, compareLengthMoreThanSixStrings) {
+	StringComparator stringComparator;
+	EXPECT_EQ(48, stringComparator.compareString("FGHIJK", "ABCDE"));
+}
+
+TEST(SIMILARITYCHECK, compareLengthLessThanFourStrings) {
+	StringComparator stringComparator;
+	EXPECT_EQ(45, stringComparator.compareString("FGHI", "ABCDE"));
+}
+
+TEST(SIMILARITYCHECK, compareLengthLessThanOnetring) {
+	StringComparator stringComparator;
+	EXPECT_EQ(0, stringComparator.compareString("F", "ABCDE"));
 }
 
 int main() {
